@@ -18,3 +18,5 @@ const webpack = require('webpack')
 }
 
 * Added a new webpack script to package.json i.e.  "build": "webpack"
+* html webpack plugin  and babel were also installed
+* web dev server was also installed and setup as well as the clean plugin
