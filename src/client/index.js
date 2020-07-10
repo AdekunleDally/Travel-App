@@ -1,8 +1,16 @@
-import  { testApp } from'./js/app';
+import  { 
+  handleSubmit, GeoNameCityData, postData, weatherbitData,
+  postWeatherbitData,getPixaBayData,postPixaBayData, 
+  getCountryData, postcountryData, updateGeoUI,updateWeatherUI,
+  updatePixaBayUI, updateCountryUI
+ } from'./js/formHandler';
 import './styles/style.scss';
 
 
-testApp();
 export {
-    testApp
-  }
+ handleSubmit, GeoNameCityData, postData, weatherbitData,
+ postWeatherbitData,getPixaBayData,postPixaBayData, 
+ getCountryData, postcountryData, updateGeoUI,updateWeatherUI,
+ updatePixaBayUI,updateCountryUI
+}
+ 
