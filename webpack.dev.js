@@ -21,12 +21,16 @@ module.exports = {
           {
             test: /\.scss$/,
             use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-          }
+          },
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [ 'file-loader']
+          },
         ]
       },
     plugins:[
         new HTMLWebPackPlugin({
-          template: './src/client/views/index.html',
+          template: './src/client/html/views/index.html',
           filename: './index.html'
         }),
         new CleanWebpackPlugin({

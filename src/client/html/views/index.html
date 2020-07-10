@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALLY TRAVEL APP :: ...Where would you like to go?</title>
+</head>
+
+  <div class="container">
+    <h1 class="travel-title"> Dally Travel App</h1>
+    <form class="Travel-Input-form" onsubmit="return Client.handleSubmit(event)">
+      <fieldset>
+        <legend>Travel Information:</legend>
+        <label for="travelDest">Please Enter your Travel Destination Here:</label><br>
+        <input type="text" id="city" name="travel-dest" placeholder="Trip location"><br>
+        <label for="tripDate">Departure Date:</label><br>
+        <input type="date" id="tripDate" name="tripDate"><br><br>
+        <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+      </fieldset>
+    </form>
+
+    <div class="card">
+      <!--<img src='../../media/img1.png' class="time">-->
+      
+      <div class="icon">
+        <img src="" alt="">
+      </div>
+
+      <div class="details">
+         <h5 class="city">CITY NAME</h5>
+         <h5 class="country">COUNTRY NAME</h5>
+
+        <div class="weather"> WEATHER CONDITION</div> <br />
+
+        <div class="tempDisplay">
+          <span class="tempClass">TEMP</span>
+          <span>&deg;C</span> <br />
+        </div>
+      </div>
+
+      <div class="country-details">
+        <label for="cityRegion">The Region is :</label> <br />
+         <h5 class="city-region"></h5>
+
+        <label for="countryCode">The calling code is : </label> <br />
+        <h5 class="country-code"></h5>
+
+        <label for="countryCurrencies">The Currency used is : </label> <br />
+        <div class="country-currencies"> </div> <br>
+
+        <!--<div class="langDisplay">
+          <label for="langClass">The Language spoken is : </label>
+          <span class="lang-Class"></span>-->
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<body>
+  
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>>
+</body>
+</html>

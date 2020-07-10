@@ -1,6 +1,6 @@
 # Travel App
 ###### This web application is a travel app that obtains a desired trip location
-###### and date from the user then displays the weather and an image of the location using information obtained from external APIs
+###### and date from the user then displays the weather obtained from external APIs
 
 ### Install
 ###### The following were installed in order to get the app up and running
@@ -19,4 +19,17 @@ const webpack = require('webpack')
 
 * Added a new webpack script to package.json i.e.  "build": "webpack"
 * html webpack plugin  and babel were also installed
-* web dev server was also installed and setup as well as the clean plugin
+* web dev server, was also installed and setup as well as the clean plugin
+* Service Workers was installed
+* webpack.config.js was set up for production and development
+
+### The website layout was done
+### After setting up account with webpack,  google Geonames and Create an account with Geonames.
+#### The parameter 'username' needs to be passed with each request. The username for your application should be registered here. 
+#### Enable your account for the webservice on your account page
+#### Don't forget to url encode string parameters containing special characters or spaces.
+#### Use the JSON services if you want to use GeoNames from javascript, as most browsers do not allow to call xml services from ANOTHER server.
+
+#### File loader was installed to load in images
+#### The REST Country API was implemented too
+#### For Testing , supertest was implemented
