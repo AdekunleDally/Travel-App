@@ -4,9 +4,10 @@
   "description": "package.json",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand --detectOpenHandles",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
+    "build-dev": "webpack-dev-server --config webpack.dev.js --open",
+    "start":   "node ./src/server/index.js/"
   },
   "author": "",
   "license": "ISC",

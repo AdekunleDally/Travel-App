@@ -1,6 +1,8 @@
 var path=require('path');
-const express = require('express');
+const express= require ('express');
 const app = express();
+
+//const express = require('express');
 //const mockAPIResponse = require('./mockAPI');
 
 /* Body Parser Dependencies*/
@@ -24,12 +26,8 @@ const projectData= {
   cntryData: []
 };
 
-//CREATE LOCAL SERVER
-const port = 8080;
+app.get('/', (req, res) => res.status(200).json({ message: 'Project started' }));
 
-const server= app.listen(port, function(){
-  console.log(`Listening on port ${port}`);
-});
 
 app.get('/', function(req, res){
   res.sendFile(path.resolve('dist/index.html'));
@@ -204,4 +202,4 @@ res.send(projectData.cntryData);
 }
 
 
-module.exports = server;
+module.exports = app;

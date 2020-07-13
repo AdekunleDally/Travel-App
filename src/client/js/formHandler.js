@@ -71,10 +71,9 @@ console.log("The latestGeoData is: ", latestGeoData )
 
 //pixabay postData
 
-getPixaBayData(PixabayBaseURL, `${latestGeoData.city} ${latestGeoData.country}`)
+getPixaBayData(PixabayBaseURL, cityName)
 .then(function(pixaBayData){
-  console.log("The pixaBayData is", pixaBayData.hits[0])
-  const { userImageURL } = pixaBayData.hits[0];
+  console.log("The top pixaBayData is", pixaBayData.hits[0])
   
 const postPixaBayResult= postPixaBayData('http://localhost:8080/pixaBayDataRoute', {
   comments: pixaBayData.hits[0].comments,
@@ -163,10 +162,11 @@ export async function postcountryData(url, data){
 const PixabayBaseURL = 'https://pixabay.com/api/';
 const pixabayKEY = '17376454-f5702e95961e06a28713dca48';
 
-export async function getPixaBayData(baseURL, searchTerm){
-  const response=await fetch(`${PixabayBaseURL}?key=${pixabayKEY}&q=${encodeURIComponent(searchTerm)}`);
-    try {
+export async function getPixaBayData(baseURL, cityName){
+const response=await fetch(`${PixabayBaseURL}?key=${pixabayKEY}&q=${encodeURIComponent(cityName)}&category=places&image_type=photo&pretty=true`);
+  try {
       const pixaBaydata = await response.json();
+      console.log("My PixaBayData is", pixaBaydata)
       return pixaBaydata;
     } catch (error) {
       console.log('Error here: ', error);
@@ -262,8 +262,8 @@ export async function updateGeoUI (){
   const geoResponse = await fetch ('http://localhost:8080/getGeoNameData');
   try {
     const alGeoData= await geoResponse.json();
-    document.querySelector('.details .city').innerHTML =  alGeoData[0].cityName;
-    document.querySelector('.details .country').innerHTML = alGeoData[0].countryName;
+    document.querySelector('.cityName').innerHTML =  alGeoData[0].cityName;
+    document.querySelector('.countryName').innerHTML = alGeoData[0].countryName;
   } catch(error){
 console.log('error is ', error);
     }
@@ -275,8 +275,8 @@ export async function updateWeatherUI (){
   try {
     const alWeatherData= await weatherResponse.json();
     console.log("The UI alWeatherData is : ", alWeatherData)
-    document.querySelector('.details .weather').innerHTML =  alWeatherData[0].weatherDescription;
-    document.querySelector('.details .tempDisplay .tempClass').innerHTML = alWeatherData[0].appMaxTemp; 
+    document.querySelector('.weather-details .weather').innerHTML =  alWeatherData[0].weatherDescription;
+    document.querySelector('.weather-details .tempClass').innerHTML = alWeatherData[0].appMaxTemp; 
   } catch(error){
 console.log('error is ', error);
   }
@@ -287,6 +287,8 @@ export async function updatePixaBayUI (){
   const pixaBayResponse = await fetch ('http://localhost:8080/getPixaBayData');
   try {
     const alPixaBayData= await pixaBayResponse.json();
+    console.log("The  AlpixaBayData is: " , alPixaBayData)
+    document.querySelector('.country-picture').src =  alPixaBayData[0].previewURL;
 } catch(error){
 console.log('error is ', error);
   }

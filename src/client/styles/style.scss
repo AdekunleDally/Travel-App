@@ -1,25 +1,66 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1500px){
   body {
     background: #eeedec;
     letter-spacing: 0.2em;
     font-size: 0.8em;
+    font-weight: bold;
     text-align: center;
-    background-image: url("../../../assets/images/img1.jpg");
+    background-image: url("../assets/images/img2.jpg");
+    background-repeat: round;
   }
-  div.container {
-    max-width: 400px;
-    display: block;
-    text-align: center;
-    border-radius: 5px;
+  .container {
+    display: grid;
+    width: 75vw;
+    height:100vh;
     margin: auto;
-    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    grid-template-columns: 100px 100px 100px;
+    grid-auto-rows: minmax(5px, auto);
+    grid-template-areas:
+    'header header header header header header '
+    'left left section section right right '
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+    padding: 10px;
   }
   
-  .card{
-    border-radius: 5px;
+  .box{
+    justify-content: center;
+    align-items: center;
   }
   
-  
+  .header{
+    grid-area: header;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form{
+     grid-area: section;
+   }
+ 
+   .left{
+     grid-area: left;
+   }
+ 
+   .right{
+     grid-area:right;
+   }
+
+
+  .pic{
+    grid-area: main;
+  }
+
+  .footer{
+    display: grid;
+    grid-area: footer;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1.travel-title{
     color: grey;
     text-align: center;
@@ -72,6 +113,7 @@
   img {
     max-width: 100%;
     height: auto;
+    opacity: 0.8;
   }
   
 }
