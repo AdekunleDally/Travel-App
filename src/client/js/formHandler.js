@@ -286,7 +286,7 @@ console.log('error is ', error);
 export async function updatePixaBayUI (){
   const pixaBayResponse = await fetch ('http://localhost:8080/getPixaBayData');
   try {
-    const alPixaBayData= await pixaBayResponse.json();
+    const alPixaBayData= await pixaBayResponse.json(); 
     console.log("The  AlpixaBayData is: " , alPixaBayData)
     document.querySelector('.country-picture').src =  alPixaBayData[0].previewURL;
 } catch(error){

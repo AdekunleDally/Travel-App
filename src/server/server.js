@@ -28,7 +28,6 @@ const projectData= {
 
 app.get('/', (req, res) => res.status(200).json({ message: 'Project started' }));
 
-
 app.get('/', function(req, res){
   res.sendFile(path.resolve('dist/index.html'));
   res.send(projectData);

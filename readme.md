@@ -33,7 +33,7 @@ const webpack = require('webpack')
 #### File loader was installed to load in images
 #### The REST Country API was implemented too
 #### For Testing , supertest was implemented and jest was ensured it exit gracefully after the tests are done 
-
+#### pixaBay API was used to display the location of the image searched
 ### Instructions
 #### Use npm start command to  start server. This should start the server
 #### use npm run build-prod  to start tha application in production mode. This would start the application in production mode.

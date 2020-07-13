@@ -6,7 +6,6 @@ import  {
  } from'./js/formHandler';
 import './styles/style.scss';
 
-
 export {
  handleSubmit, GeoNameCityData, postData, weatherbitData,
  postWeatherbitData,getPixaBayData,postPixaBayData, 

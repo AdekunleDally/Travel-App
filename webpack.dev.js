@@ -42,5 +42,5 @@ module.exports = {
           cleanStaleWebpackAssets: true,
           protectWebpackAssets: false
   })
-      ]
+    ]
  }
