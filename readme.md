@@ -31,7 +31,6 @@ const webpack = require('webpack')
 #### Use the JSON services if you want to use GeoNames from javascript, as most browsers do not allow to call xml services from ANOTHER server.
 
 #### File loader was installed to load in images
-#### The REST Country API was implemented too
 #### For Testing , supertest was implemented and jest was ensured it exit gracefully after the tests are done 
 #### pixaBay API was used to display the location of the image searched
 ### Instructions
@@ -40,3 +39,5 @@ const webpack = require('webpack')
 #### use npm test to run test on the application. The application should pass the tests
 
 
+## Additional Feature Implemented
+#### The REST Country API was implemented as an additonal feature
